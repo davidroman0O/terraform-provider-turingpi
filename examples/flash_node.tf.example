@@ -1,0 +1,37 @@
+# Flash OS image example
+# Rename this file to flash_node.tf to use it
+#
+# WARNING: This will overwrite the OS on the target node!
+
+# Flash Talos Linux to node 4
+resource "turingpi_node_flash" "node4_talos" {
+  node      = 4
+  image_url = "https://firmware.turingpi.com/turing-rk1/talos/talos-arm64-turing-rk1_v1.6.3.raw.xz"
+  cache     = "local"  # Options: "local", "bmc", "none"
+
+  timeouts {
+    create = "1h"
+  }
+}
+
+# Flash Ubuntu to node 1 with BMC caching (faster for multiple nodes)
+# resource "turingpi_node_flash" "node1_ubuntu" {
+#   node      = 1
+#   image_url = "https://firmware.turingpi.com/turing-rk1/ubuntu_22.04_rockchip_linux/v1.33/ubuntu-22.04.3-preinstalled-server-arm64-turing-rk1_v1.33.img.xz"
+#   cache     = "bmc"
+#
+#   timeouts {
+#     create = "3h"
+#   }
+# }
+
+# Flash from local file
+# resource "turingpi_node_flash" "node2_local" {
+#   node       = 2
+#   image_path = "/path/to/your/image.img"
+#   cache      = "none"
+#
+#   timeouts {
+#     create = "2h"
+#   }
+# }
