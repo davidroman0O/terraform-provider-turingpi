@@ -70,20 +70,6 @@ func (r *NodeFlashResource) Schema(ctx context.Context, req resource.SchemaReque
 
 This resource supports downloading images from URLs with automatic decompression for .xz, .gz, and .zip formats.
 Images can be cached locally or on the BMC to speed up subsequent flashes.
-
-## Example Usage
-
-` + "```hcl" + `
-resource "turingpi_node_flash" "ubuntu" {
-  node      = 1
-  image_url = "https://cdimage.ubuntu.com/releases/24.04/release/ubuntu-24.04-preinstalled-server-arm64+raspi.img.xz"
-  cache     = "bmc"
-
-  timeouts {
-    create = "3h"
-  }
-}
-` + "```" + `
 `,
 		Attributes: map[string]schema.Attribute{
 			"id": schema.StringAttribute{

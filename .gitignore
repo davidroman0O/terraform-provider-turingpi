@@ -1,5 +1,6 @@
 # Binaries
 terraform-provider-turingpi
+dist/
 *.exe
 *.dll
 *.so

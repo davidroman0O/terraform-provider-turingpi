@@ -17,7 +17,7 @@ Manage your Turing Pi 2 BMC resources with Terraform.
 
 ## Installation
 
-### From Terraform Registry (coming soon)
+### From Terraform Registry
 
 ```hcl
 terraform {
@@ -110,6 +110,9 @@ make install
 
 # Run tests
 make test
+
+# Generate Terraform Registry docs
+make generate
 
 # Run acceptance tests (requires BMC access)
 export TURINGPI_HOST="192.168.1.90"

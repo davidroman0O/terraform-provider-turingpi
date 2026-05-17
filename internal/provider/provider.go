@@ -65,16 +65,6 @@ The Turing Pi provider allows you to manage Turing Pi 2 cluster board resources.
 - **Power management** for individual nodes
 - **USB configuration** for node connectivity
 - **BMC information** retrieval
-
-## Example Usage
-
-` + "```hcl" + `
-provider "turingpi" {
-  host     = "192.168.1.90"
-  username = "root"
-  password = "turing"
-}
-` + "```" + `
 `,
 		Attributes: map[string]schema.Attribute{
 			"host": schema.StringAttribute{
